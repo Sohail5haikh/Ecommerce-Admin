@@ -51,6 +51,7 @@ export const SettingsForm: React.FC<SettingsFormProps> = ({
             setLoading(true)
             await axios.patch(`/api/stores/${params.storeId}`, data)
             router.refresh()
+            toast.success("Store updated")
         } catch(error){
             toast.error("Something went wrong")
         } finally {
